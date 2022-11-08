@@ -1,4 +1,4 @@
-import { getSecondsLeftOfYear, getTimeString } from "./clock";
+import { getSecondsLeftOfYear, getTimeString, getDaysUntilXmas} from "./clock";
 
 test('getTimeString formats time string correctly', () => {
     const now = new Date(0, 0, 0, 10, 20, 30);
@@ -11,4 +11,3 @@ test('getSecondsLeftOfYear returns the correct amount of seconds', () => {
     const timeString = getSecondsLeftOfYear(now);
     expect(timeString).toBe(3600);
 });
-
