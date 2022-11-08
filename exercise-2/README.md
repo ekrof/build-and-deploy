@@ -35,7 +35,7 @@ flowchart TD
 
 :book: GitHub Actions is "code as configuration", which means that you configure it by simply adding a workflow configuration file to your repository.
 
-:pencil2: Create a new folder at the root of the project called `.github`
+:pencil2: Create a new folder at the root of the repository called `.github`
 
 :pencil2: Inside `.github`, create a new folder called `workflows`.
 
@@ -177,24 +177,10 @@ Linting is just to verify that our code follows certain best practices and code 
 
 :pencil2: Run `npm run lint` in your terminal to run ESLint. The command should take a few seconds, then exit without errors.
 
-:pencil2: Open `code/main.js` and add the following line to the end of the file
+:pencil2: Open `code/src/main.js` and add the following line to the end of the file
 
-```diff
-import {  getSecondsLeftOfYear, getTimeString } from "./clock";
-
-const timeContainer = document.getElementById("time");
-const timeLeft = document.getElementById("seconds-left");
-
-const render = () => {
-  const now = new Date();
-  timeLeft.innerText = getSecondsLeftOfYear(now);
-  timeContainer.innerText = getTimeString(now);
-}
-
-render();
-setInterval(render, 1000);
-
-+ const unusedVariable = 3;
+```javascript
+const unusedVariable = 3;
 ```
 
 :pencil2: Run `npm run lint` again. 
